@@ -51,18 +51,21 @@ public class List_inArraySlots {
       */
     public String toString() {
       String s = "[";
+	  int intIndex = 0;
+	  int doubleIndex = 0;
+	  int stringIndex = 0;
       for(int i = 0; i < filledElements; i++){
         if(typeOfElements[i] == 0){
-          s += intElements[intCount];
-          intCount++;
+          s += intElements[intIndex];
+          intIndex++;
         }
           else if(typeOfElements[i] == 1){
-            s += doubleElements[doubleCount];
-            doubleCount++;
+            s += doubleElements[doubleIndex];
+            doubleIndex++;
           }
             else{
-              s += stringElements[stringCount];
-              stringCount++;
+              s += stringElements[stringIndex];
+              stringIndex++;
             }
         s += ",";
       }
@@ -92,10 +95,11 @@ public class List_inArraySlots {
                               doubleElements[doubleCount] = doubleValue;
                               doubleCount++;
                             }
-                              else{
+                              else {
                                 stringElements[stringCount] = stringValue;
                                 stringCount++;
                               }
+						   filledElements++;
                            return true;
      }
 
