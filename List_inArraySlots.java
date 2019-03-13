@@ -138,4 +138,24 @@ public class List_inArraySlots {
         stringElements = dummyString;
         typeOfElements = dummyType;
      }
+
+     public Element get(int index) {
+       int counter = 0;
+       for (int i = 0; i < index + 1; i++) {
+         if (this.typeOfElements[i] == this.typeOfElements[index]) {
+           counter++;
+         }
+       }
+       Element el = new Element();
+       if (typeOfElements[index] == 0) {
+         el.intEl = intElements[counter];
+         return el;
+       } else if (typeOfElements[index] == 0) {
+         el.doubleEl = doubleElements[counter];
+       	 return el;
+       } else {
+         el.stringEl = stringElements[counter];
+       	 return el;
+       }
+    }
 }
